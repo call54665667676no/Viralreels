@@ -2,28 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting...</title>
-  
-  <!-- Fast Meta Fallback -->
-  <meta http-equiv="refresh" content="0;url=https://almm.urlxx347.com/?utm_source=Raees&utm_medium=🚬">
-
   <script>
     (function() {
-      // Main Target Link
-      var redirectUrl = "https://almm.urlxx347.com/?utm_source=Raees&utm_medium=🚬";
+      // Aapka naya target URL add kar diya gaya hai
+      const targetUrls = {
+        "doc1": "https://almm.urlxx347.com/?utm_source=Raees&utm_medium=🚬",
+        "doc2": "https://docs.google.com/document/d/YOUR_DOC_ID_2/edit",
+        "link1": "https://almm.urlxx347.com/?utm_source=Raees&utm_medium=🚬"
+      };
 
-      // URL parameters ko preserve karna ( tracking tags / query params lose na ho )
-      var search = window.location.search;
-      var extraParams = search ? search.replace('?', '&') : '';
+      // URL se 'id' parameter extract karne ke liye
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get('id') || "doc1";
 
-      var finalTarget = redirectUrl + extraParams;
+      let destination = targetUrls[id] || "https://almm.urlxx347.com/?utm_source=Raees&utm_medium=🚬";
 
-      // Ultra-Fast Replace Redirect (Clean browser history & instant speed)
-      window.location.replace(finalTarget);
+      // Agar koi extra UTM parameters aayein to unhe forward karega
+      try {
+        const destUrl = new URL(destination);
+        urlParams.forEach((value, key) => {
+          if (key.startsWith('utm_')) {
+            destUrl.searchParams.set(key, value);
+          }
+        });
+        destination = destUrl.toString();
+      } catch (e) {}
+
+      window.location.replace(destination);
     })();
   </script>
 </head>
-<body style="background:#ffffff; margin:0; padding:0;">
+<body>
+  <p>Redirecting...</p>
 </body>
 </html>
