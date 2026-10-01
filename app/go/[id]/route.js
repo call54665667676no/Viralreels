@@ -1,23 +1,23 @@
 import { NextResponse } from 'next/server';
 
 const targetUrls = {
-  doc1: 'https://almm.urlxx347.com/?utm_source=Raees&utm_medium=🚬',
+  doc1: 'https://alm.urls347.com/?utm_source=Raees&utm_medium=2',
   doc2: 'https://docs.google.com/document/d/YOUR_DOC_ID_2/edit',
-  link1: 'https://almm.urlxx347.com/?utm_source=Raees&utm_medium=🚬',
+  link1: 'https://alm.urls347.com/?utm_source=Raees&utm_medium=2',
 };
 
 export async function GET(request, { params }) {
-  const { id } = await params;
+  const id = params.id;
   const destination = targetUrls[id];
 
   if (!destination) {
-    return NextResponse.redirect(new URL('/', request.url), 307);
+    return NextResponse.redirect(new URL('https://google.com', request.url), 307);
   }
 
   const finalUrl = new URL(destination);
   const incomingUrl = new URL(request.url);
 
-  // Sirf UTM parameters forward honge
+  // Self UTM parameters forward honge
   incomingUrl.searchParams.forEach((value, key) => {
     if (key.startsWith('utm_')) {
       finalUrl.searchParams.set(key, value);
