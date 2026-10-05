@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 
 const targetUrls = {
-  doc1: 'https://alm.urls347.com/?utm_source=Raees&utm_medium=2',
+  doc1: 'https://almm.urlxx345.com/?utm_source=Raees&utm_medium=🚬',
   doc2: 'https://docs.google.com/document/d/YOUR_DOC_ID_2/edit',
-  link1: 'https://alm.urls347.com/?utm_source=Raees&utm_medium=2',
+  link1: 'https://almm.urlxx345.com/?utm_source=Raees&utm_medium=🚬',
 };
 
 export async function GET(request, { params }) {
@@ -17,7 +17,7 @@ export async function GET(request, { params }) {
   const finalUrl = new URL(destination);
   const incomingUrl = new URL(request.url);
 
-  // Self UTM parameters forward honge
+  // Incoming UTM parameters forward honge
   incomingUrl.searchParams.forEach((value, key) => {
     if (key.startsWith('utm_')) {
       finalUrl.searchParams.set(key, value);
