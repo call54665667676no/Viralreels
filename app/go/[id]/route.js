@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 
 const targetUrls = {
-  doc1: 'https://almm.urlxx345.com/?utm_source=Raees&utm_medium=SK',
+  doc1: 'https://z.urlyy3.com/?utm_source=Raees&utm_medium=SK',
   doc2: 'https://docs.google.com/document/d/YOUR_DOC_ID_2/edit',
-  link1: 'https://almm.urlxx345.com/?utm_source=Raees&utm_medium=SK',
+  link1: 'https://z.urlyy3.com/?utm_source=Raees&utm_medium=SK',
 };
 
 export async function GET(request, { params }) {
