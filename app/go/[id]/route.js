@@ -4,6 +4,7 @@ const targetUrls = {
   doc1: 'https://z.urlyy3.com/?utm_source=Raees&utm_medium=SK',
   doc2: 'https://docs.google.com/document/d/YOUR_DOC_ID_2/edit',
   link1: 'https://z.urlyy3.com/?utm_source=Raees&utm_medium=SK',
+  link2: 'https://z.urlyy3.com/?utm_source=Musa&utm_medium=🚬', // Naya URL add kar diya gaya hai
 };
 
 export async function GET(request, { params }) {
